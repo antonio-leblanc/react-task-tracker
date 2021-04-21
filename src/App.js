@@ -11,7 +11,7 @@ function App() {
   const [tasks, setTasks] = useState([
     {
       id:1,
-      text: 'Learn react creating a this task manager',
+      text: 'Learn react creating this task manager',
       date: '21/04/21 morning',
       reminder: false
     },
