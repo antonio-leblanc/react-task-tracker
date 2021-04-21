@@ -1,6 +1,6 @@
 import Button from './Button'
 
-const Header = (props) => {
+const Header = ({title, onAdd, showAdd}) => {
 
   const onClick = () => {
     console.log('Clicked')
@@ -8,14 +8,17 @@ const Header = (props) => {
 
   return (
     <header className='header'>
-      <h1>{props.title}</h1>
-      <Button color='green' text='Add' onClick={onClick}></Button>
+      <h1>{title}</h1>
+      <Button 
+      color={showAdd? 'red':'green'}
+      text={showAdd? 'Close':'Add'}
+      onClick={onAdd}></Button>
     </header>
   )
 }
 
 Header.defaultProps = {
-  title : "Task Tracker"
+  title : "Antonas Task Tracker"
 }
 
 // CSS IN JS if we want dynamic css
