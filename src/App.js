@@ -9,11 +9,15 @@ function App() {
   const [tasks, setTasks] = useState([
     {
       id:1,
-      text: 'Program new task manager',
+      text: 'Learn react creating a this task manager',
+      date: '21/04/21 morning',
+      reminder: false
     },
     {
       id:2,
-      text: 'Create new react site',
+      text: 'Create new react personal site',
+      date: '21/04/21 afternoon',
+      reminder: true
     },
   ])
 
@@ -22,12 +26,22 @@ function App() {
     setTasks(tasks.filter((t) => t.id !== id))
   }
 
+  const toggleTask = (id) => {
+    console.log('toggle', id)
+    setTasks(tasks.map((t) => 
+    t.id === id ? {...t, reminder:!t.reminder}
+    : t
+    ))
+    console.log('tasks', tasks)
+
+  }
+
   return (
     <div className="container">
       
       <Header></Header>
       {tasks.length >0? (
-        <Tasks tasks={tasks} onDelete={deleteTask}></Tasks>
+        <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleTask}></Tasks>
       ): ('No tasks')}
 
     </div>
