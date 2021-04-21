@@ -18,5 +18,6 @@ npm run build
 ### Deployment on github pages
 
 ```
-git subtree push --prefix build origin gh-pages
+npm run deploy
 ```
+[create-react-app Docs](https://create-react-app.dev/docs/deployment/)
