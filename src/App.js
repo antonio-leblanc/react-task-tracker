@@ -4,8 +4,8 @@ import Header from './components/Header'
 
 function App() {
   return (
-    <div className="App">
-      <Header title='Antonas'></Header>
+    <div className="container">
+      <Header title='Task Tracker'></Header>
       <h1>Hello from react</h1>
       <img src={logo} className="App-logo" alt="logo" />
     </div>
