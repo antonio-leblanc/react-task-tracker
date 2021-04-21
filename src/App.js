@@ -19,12 +19,17 @@ function App() {
 
   const deleteTask = (id) => {
     console.log('delete', id)
+    setTasks(tasks.filter((t) => t.id !== id))
   }
 
   return (
     <div className="container">
-      <Header title='Task Tracker'></Header>
-      <Tasks tasks={tasks} onDelete={deleteTask}></Tasks>
+      
+      <Header></Header>
+      {tasks.length >0? (
+        <Tasks tasks={tasks} onDelete={deleteTask}></Tasks>
+      ): ('No tasks')}
+
     </div>
   );
 }
